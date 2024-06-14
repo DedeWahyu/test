@@ -1,7 +1,7 @@
 const User = require("../models/users");
 const { validationResult } = require("express-validator");
 const { userValidationUpdate } = require("../utils/validation");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const getAllUser = async (req, res) => {
   const users = await User.find();
@@ -22,10 +22,7 @@ const uploadProfileImage = async (req, res) => {
     const payload = {
       id: user._id,
       user: user.fullname,
-      email: user.email,
-      no_phone: user.no_phone,
       role: user.role,
-      img_url: user.img_url,
     };
 
     const token = jwt.sign(payload, process.env.JWT_SECRET, {

@@ -25,9 +25,6 @@ const auth = async (req, res) => {
     const payload = {
       id: user._id,
       user: user.fullname,
-      email: user.email,
-      no_phone: user.no_phone,
-      img_url: user.img_url,
       role: user.role,
     };
 
